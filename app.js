@@ -9,6 +9,8 @@ const addFriendButton = document.getElementById('add-friend-button');
 // initialize state
 
 let mushroomCount = 3;
+//****Not sure if below state is necessary or accurate */
+let friendSatisfaction = 0;
 
 const friendData = [
     {
@@ -43,8 +45,16 @@ addMushroomButton.addEventListener('click', () => {
 addFriendButton.addEventListener('click', () => {
     // get the name from the input
     // create a new friend object
+    let newFriend = {
+        name: friendInputEl.value, 
+        satisfaction: Math.ceil(Math.random() * 3)
+    };
     // push it into the friends state array, passed in as an argument
+    friendData.push(newFriend);
     // reset the input
+    friendInputEl.value = '';
+
+    console.log(newFriend);
     // display all the friends (use a function here)
 });
 
