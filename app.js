@@ -54,8 +54,8 @@ addFriendButton.addEventListener('click', () => {
     // reset the input
     friendInputEl.value = '';
 
-    console.log(newFriend);
     // display all the friends (use a function here)
+    displayFriends();
     
 
 });
