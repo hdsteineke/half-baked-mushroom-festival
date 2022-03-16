@@ -72,8 +72,10 @@ function displayFriends() {
         // this is a clickable list, so . . .
         //     add an event listener to each friend
         friendEl.addEventListener('click', () => {
-            if (friendEl.satisfaction < 3 && mushroomCount > 0) {
-                friendEl.satisfaction++;
+            if (mushroomCount === 0) {
+                alert('Time to forage!');
+            } else if (friend.satisfaction < 3 && mushroomCount > 0) {
+                friend.satisfaction++;
                 mushroomCount--;
             }
             displayFriends();
