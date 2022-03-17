@@ -9,7 +9,7 @@ const addFriendButton = document.getElementById('add-friend-button');
 // initialize state
 
 let mushroomCount = 3;
-//****Not sure if below state is necessary or accurate */
+var names = ['Carly', 'Freddie', 'Jackie', 'Ash', 'Misty', 'Brock'];
 
 const friendData = [
     {
@@ -45,7 +45,7 @@ addFriendButton.addEventListener('click', () => {
     // get the name from the input
     // create a new friend object
     let newFriend = {
-        name: friendInputEl.value, 
+        name: friendInputEl.value || randomName(names),
         satisfaction: Math.ceil(Math.random() * 2)
     };
     // push it into the friends state array, passed in as an argument
@@ -104,3 +104,9 @@ function displayMushrooms() {
 displayFriends();
 
 displayMushrooms();
+
+
+function randomName(names) {
+    return names[Math.floor(Math.random() * names.length)];
+    
+}
